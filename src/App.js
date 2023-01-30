@@ -17,20 +17,15 @@ function App() {
     let burning = 0
     let gramsresult = 0
 
-    if (gender === 'male') {
-      litre = bottles * 0.33
-      grams = litre * 8 * 4.5
-      burning = weight / 10
-      gramsresult = grams - (burning * time)
+    litre = bottles * 0.33
+    grams = litre * 8 * 4.5
+    burning = weight / 10
+    gramsresult = grams - (burning * time)
 
+    if (gender === 'male') {
       alcohol = gramsresult / (weight * 0.7)
     }
     else {
-      litre = bottles * 0.33
-      grams = litre * 8 * 4.5
-      burning = weight / 10
-      gramsresult = grams - (burning * time)
-
       alcohol = gramsresult / (weight * 0.6)
     }
     if (alcohol < 0) {
