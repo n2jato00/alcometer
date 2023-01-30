@@ -46,7 +46,7 @@ function App() {
         </div>
         <div>
           <label>Pullot (kpl): </label>
-          <select name='time' value={bottles} onChange={e => setBottles(e.target.value)}>
+          <select name='bottles' value={bottles} onChange={e => setBottles(e.target.value)}>
             <option value='1'>1</option>
             <option value='2'>2</option>
             <option value='3'>3</option>
