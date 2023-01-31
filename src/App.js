@@ -2,8 +2,6 @@ import './App.css';
 import { useState } from 'react';
 
 function App() {
-
-
   const [weight, setWeight] = useState(90)
   const [gender, setGender] = useState('male')
   const [bottles, setBottles] = useState(1)
