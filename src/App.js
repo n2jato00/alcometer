@@ -2,11 +2,21 @@ import './App.css';
 import { useState } from 'react';
 
 function App() {
+
+
   const [weight, setWeight] = useState(90)
   const [gender, setGender] = useState('male')
   const [bottles, setBottles] = useState(1)
   const [time, setTime] = useState(0)
   const [result, setResult] = useState(0)
+  const bottlesArray = []
+  for (let i = 1; i <= 15; i++) {
+    bottlesArray.push(i);
+  }
+  const timeArray = []
+  for (let i = 0; i <= 24; i++) {
+    timeArray.push(i);
+  }
 
 
   function calculate(e) {
@@ -47,32 +57,17 @@ function App() {
         <div>
           <label>Pullot (kpl): </label>
           <select name='bottles' value={bottles} onChange={e => setBottles(e.target.value)}>
-            <option value='1'>1</option>
-            <option value='2'>2</option>
-            <option value='3'>3</option>
-            <option value='4'>4</option>
-            <option value='5'>5</option>
-            <option value='6'>6</option>
-            <option value='7'>7</option>
-            <option value='8'>8</option>
-            <option value='9'>9</option>
-            <option value='10'>10</option>
+            {
+              bottlesArray.map(opt => <option>{opt}</option>)
+            }
           </select>
         </div>
         <div>
           <label>Aika aloittamisesta (h) </label>
           <select name='time' value={time} onChange={e => setTime(e.target.value)}>
-            <option value='0'>0</option>
-            <option value='1'>1</option>
-            <option value='2'>2</option>
-            <option value='3'>3</option>
-            <option value='4'>4</option>
-            <option value='5'>5</option>
-            <option value='6'>6</option>
-            <option value='7'>7</option>
-            <option value='8'>8</option>
-            <option value='9'>9</option>
-            <option value='10'>10</option>
+            {
+              timeArray.map(opt => <option>{opt}</option>)
+            }
           </select>
         </div>
         <div>
